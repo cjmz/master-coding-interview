@@ -2,32 +2,32 @@ package main
 
 import "fmt"
 
-type char struct {
-	char  string
-	found bool
-}
-
 func main() {
-	arr1 := []string{"a", "b", "c"}
-	arr2 := []string{"x", "y", "u", "a"}
+	arr1 := []string{"a", "b", "c", "x"}
+	arr2 := []string{"u", "y", "p"}
 
-	// fmt.Printf("Return: %t\n", searchWithNestedArrays(arr1, arr2))
+	fmt.Printf("Return: %t\n", searchWithNestedArrays(arr1, arr2))
 	fmt.Printf("Return: %+v\n", searchWithoutNestedArrays(arr1, arr2))
 
 }
 
-func searchWithoutNestedArrays(arr1 []string, arr2 []string) []char {
-	var s1 []char
+// O(a + b)
+func searchWithoutNestedArrays(arr1 []string, arr2 []string) bool {
+	a1 := make(map[string]bool, len(arr1))
 
 	for i := 0; i < len(arr1); i++ {
-		s1 = append(s1, char{char: arr1[i], found: true})
+		if !a1[arr1[i]] {
+			a1[arr1[i]] = true
+		}
 	}
 
 	for j := 0; j < len(arr2); j++ {
-
+		if a1[arr2[j]] {
+			return true
+		}
 	}
 
-	return s1
+	return false
 }
 
 // O(n^2)
