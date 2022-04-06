@@ -12,6 +12,7 @@ func main() {
 }
 
 // O(a + b)
+// Space Complexity = O(a)
 func searchWithoutNestedArrays(arr1 []string, arr2 []string) bool {
 	a1 := make(map[string]bool, len(arr1))
 
@@ -31,6 +32,7 @@ func searchWithoutNestedArrays(arr1 []string, arr2 []string) bool {
 }
 
 // O(n^2)
+// Space Complexity = O(1)
 func searchWithNestedArrays(arr1 []string, arr2 []string) bool {
 	r := false
 	for i := 0; i < len(arr1); i++ {
