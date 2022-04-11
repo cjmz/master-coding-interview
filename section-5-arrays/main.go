@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	strings := []string{"a", "b", "c", "d"}
 	// 4x4 = 16 bytes of storage
-
+	strings := []string{"a", "b", "c", "d"}
 	fmt.Println(strings[2])
 
 	// append item in slice (push equivalent in JS)
@@ -20,7 +19,7 @@ func main() {
 	strings = append([]string{"X"}, strings...) // O(n) = constant
 	fmt.Println(strings)
 
-	// append item in specific position of an array
+	// append item in specific position of an array (splice equivalent in JS)
 	strings = append(strings[:3], strings[2:]...)
 	strings[2] = "O"
 	fmt.Println(strings)
