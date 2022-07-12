@@ -9,6 +9,7 @@ func main() {
 }
 
 // O(n^2)
+// NO-HASH TABLES
 func solve(n []int) int {
 	// a := 2
 
@@ -24,6 +25,7 @@ func solve(n []int) int {
 }
 
 // O(n)
+// WITH HASH TABLES
 func solve2(n []int) int {
 	a := make(map[int]bool, len(n))
 
